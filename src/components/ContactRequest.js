@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { PropTypes }  from 'react'
 
 const ContactRequest = ({ requestContactBool, submitContactRequest }) => {
     if (requestContactBool) {
@@ -26,7 +25,8 @@ const ContactRequest = ({ requestContactBool, submitContactRequest }) => {
 }
 
 ContactRequest.PropTypes = {
-    requestContactBool: PropTypes.bool.isRequired
+    requestContactBool: PropTypes.bool.isRequired,
+    submitContactRequest: PropTypes.func.isRequired
 }
 
 export default ContactRequest

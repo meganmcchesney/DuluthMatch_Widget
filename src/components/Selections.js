@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
-const Selections = function ({ userSelectionList = [], removeSelection, matchSelections }) {
+const Selections = ({ userSelectionList = [], removeSelection, matchSelections }) => {
     if (userSelectionList.length === 0) {
         return (
             <div className="container">
@@ -19,5 +19,11 @@ const Selections = function ({ userSelectionList = [], removeSelection, matchSel
         )
     }
 }
+
+Selections.propTypes = {
+    userSelectionList: PropTypes.array.isRequired,
+    removeSelection: PropTypes.func.isRequired,
+    matchSelections: PropTypes.func.isRequired
+};
 
 export default Selections

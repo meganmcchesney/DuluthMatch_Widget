@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import loadingImage from '../images/ajax-loader.gif'
 import SelectionsContainer from '../containers/SelectionsContainer'
 import MatchContainer from '../containers/MatchContainer'
 import ContactRequestContainer from '../containers/ContactRequestContainer'
 
-const App = function ({ loading, error, userChoices = [], addChoice }) {
+const App = ({ loading, error, userChoices = [], addChoice }) => {
     if (loading) {
         return (
             <div className="container shadowEffect">
@@ -20,8 +20,9 @@ const App = function ({ loading, error, userChoices = [], addChoice }) {
             </div>
         )
     }
+    
     return (
-        <div>
+        <div className = "wrapper">
             <div className="container">
                 <h3>Choices</h3>
                 <ul>
@@ -34,6 +35,13 @@ const App = function ({ loading, error, userChoices = [], addChoice }) {
             <ContactRequestContainer />
         </div>
     )
+}
+
+App.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.bool.isRequired,
+    userChoices: PropTypes.array.isRequired,
+    addChoice: PropTypes.func.isRequired
 }
 
 export default App

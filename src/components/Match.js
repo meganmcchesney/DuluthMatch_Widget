@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes }  from 'react'
 import loadingImage from '../images/ajax-loader.gif'
 
 const Match = ({  matchData, requestContact }) => {
@@ -24,5 +24,10 @@ const Match = ({  matchData, requestContact }) => {
         return null;
     }
 }
+
+Match.propTypes = {
+    matchData: PropTypes.object.isRequired,
+    requestContact: PropTypes.func.isRequired
+};
 
 export default Match
